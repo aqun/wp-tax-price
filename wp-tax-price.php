@@ -115,7 +115,7 @@ public function admin_init()
     
     $updflg=false;
 
-    if ( isset( $_POST['wtp-tax'] ) && $_POST['wtp-tax'] ){
+    if ( isset( $_POST['wtp-tax'] )  ){
 
         if ( check_admin_referer( '_wpnonce_wp_tax_price' ) ){
 
@@ -165,8 +165,8 @@ public function options_page()
     $wtp_tax = esc_attr(get_option( 'wtp-tax' ));
     $wtp_tax_calc = esc_attr(get_option( 'wtp-tax-calc' ));
     $wtp_tax_camma = esc_attr(get_option( 'wtp-tax-camma' ));
-
-    if ($wtp_tax =="" && $wtp_tax_disp=="" && $wtp_tax_calc=="" && $wtp_tax_camma="" && $wtp_tax_gobi=""){
+    
+    if ($wtp_tax =="" && $wtp_tax_calc=="" && $wtp_tax_camma=""){
         $wtp_tax = '8';
     }
 ?>
@@ -180,7 +180,7 @@ public function options_page()
 <!-- aa -->
 <p style="margin-top: 2.5em;">
     <?php _e("Tax Rate","wp_tax_price"); ?>：<input type="number" name="wtp-tax" id="wtp-tax" class="wtp-tax"
-            value="<?php echo $wtp_tax; ?>" min="0">％</p>
+            value="<?php echo $wtp_tax; ?>" min="0" required>％</p>
 
 </p>
     
@@ -220,7 +220,7 @@ public function options_page()
 </p>
 
 <p style="margin-top: 2.5em;">
-    <h3>例</h3>消費税率:8%<br>税計算方法:四捨五入<br>価格のカンマ区切り:あり<br><b>表示結果:1,080</b>
+    <h3>例</h3>パラメータ:1000<br>消費税率:8%<br>税計算方法:四捨五入<br>価格のカンマ区切り:あり<br><b>表示結果:1,080</b>
 </p>
 
 <p style="margin-top: 2.5em;">
@@ -282,14 +282,16 @@ public function wp_tax_price_calc($args){
     }
 
     $wtp_tax = esc_attr(get_option( 'wtp-tax' ));
+    $wtp_tax_camma = esc_attr(get_option( 'wtp-tax-camma' ));
+    $wtp_tax_calc = esc_attr(get_option( 'wtp-tax-calc' ));
+
     if($wtp_tax==0){
         if($wtp_tax_camma==1){
             $price = number_format($price);
         }
         return $price;
     }
-    $wtp_tax_calc = esc_attr(get_option( 'wtp-tax-calc' ));
-    $wtp_tax_camma = esc_attr(get_option( 'wtp-tax-camma' ));
+    
 
     $price = intval($price) * (1 + intval($wtp_tax)*0.01);
 
