@@ -8,11 +8,23 @@ Stable tag:        0.1.0
 License:           GPLv2
 License URI:       http://www.gnu.org/licenses/gpl-2.0.html
 
-This plugin is for tax support.
 
 == Description ==
 
+This plugin is for tax support.
 
+Displays the price converted to the tax inclusive price.
+You can use shortcode or function.
+
+Tax, tax calculations and comma-separated values can be set in the WordPress Admin Panel.
+
+How to write in the PHP file:
+<?php wp_tax_price ("1000"); ?>
+
+How to write shortcode:
+[wp_tax_price price = "1000"]
+
+[This plugin maintained on GitHub.](https://github.com/aqun/wp-tax-price)
 
 == Installation ==
 

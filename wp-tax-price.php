@@ -179,16 +179,16 @@ public function options_page()
 ビジュアルエディタに書いた価格やphpファイルに書いた価格を消費税対応で表示します。<br>こちらの設定画面で税率や表示方法を設定します。<br>※消費税率：0%とすると、そのままの値を表示します。
 <!-- aa -->
 <p style="margin-top: 2.5em;">
-    消費税率：<input type="number" name="wtp-tax" id="wtp-tax" class="wtp-tax"
+    <?php _e("Tax Rate","wp_tax_price"); ?>：<input type="number" name="wtp-tax" id="wtp-tax" class="wtp-tax"
             value="<?php echo $wtp_tax; ?>" min="0">％</p>
 
 </p>
     
 <p style="margin-top: 2.5em;">
 
-    税計算方法：<select name="wtp-tax-calc" id="wtp-tax-calc">
+    <?php _e("Calculation method","wp_tax_price"); ?>：<select name="wtp-tax-calc" id="wtp-tax-calc">
     <?php
-    $Options = array("1"=>"四捨五入","2"=>"切り捨て","3"=>"切り上げ");
+    $Options = array("1"=>__("Round off","wp_tax_price"),"2"=>__("Truncation","wp_tax_price"),"3"=>__("Round up","wp_tax_price"));
     foreach($Options as $key=>$value){
     $selected="";
     if($key==$wtp_tax_calc){$selected =" selected";}
@@ -201,9 +201,9 @@ public function options_page()
 
 <p style="margin-top: 2.5em;">
 
-    価格のカンマ区切り：<select name="wtp-tax-camma" id="wtp-tax-camma">
+    <?php _e("Comma-separated","wp_tax_price"); ?>：<select name="wtp-tax-camma" id="wtp-tax-camma">
     <?php
-    $Options = array("1"=>"あり","2"=>"なし");
+    $Options = array("1"=>__("Yes","wp_tax_price"),"2"=>__("No","wp_tax_price"));
     foreach($Options as $key=>$value){
     $selected="";
     if($key==$wtp_tax_camma){$selected =" selected";}

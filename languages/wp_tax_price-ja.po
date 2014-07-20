@@ -18,6 +18,39 @@ msgstr ""
 msgid "Save Changes"
 msgstr "変更を保存"
 
+#: wp-tax-price.php:182
+msgid "Tax Rate"
+msgstr "消費税率"
+
+#: wp-tax-price.php:189
+msgid "Calculation method"
+msgstr "税計算方法"
+
+#: wp-tax-price.php:191
+msgid "Round off"
+msgstr "四捨五入"
+
+#: wp-tax-price.php:191
+msgid "Truncation"
+msgstr "切り捨て"
+
+#: wp-tax-price.php:191
+msgid "Round up"
+msgstr "切り上げ"
+
+#: wp-tax-price.php:204
+msgid "Comma-separated"
+msgstr "価格のカンマ区切り"
+
+#: wp-tax-price.php:206
+msgid "Yes"
+msgstr "あり"
+
+#: wp-tax-price.php:206
+msgid "No"
+msgstr "なし"
+
+
 #. Plugin URI of the plugin/theme
 msgid "http://frree-free-wheeling.com"
 msgstr ""
