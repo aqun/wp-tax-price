@@ -1,9 +1,9 @@
 <?php
 /**
  * Plugin Name: WP Tax Price
- * Plugin URI:  http://frree-free-wheeling.com
+ * Plugin URI:  http://free-free-wheeling.com
  * Description: This plugin is for tax support.
- * Version:     0.1.0
+ * Version:     0.1.1
  * Author:      Akinori Tateyama
  * Author URI:  http://free-free-wheeling.com
  * License:     GPLv2
@@ -162,13 +162,15 @@ public function admin_init()
 
 public function options_page()
 {
+
     $wtp_tax = esc_attr(get_option( 'wtp-tax' ));
     $wtp_tax_calc = esc_attr(get_option( 'wtp-tax-calc' ));
     $wtp_tax_camma = esc_attr(get_option( 'wtp-tax-camma' ));
-    
-    if ($wtp_tax =="" && $wtp_tax_calc=="" && $wtp_tax_camma=""){
-        $wtp_tax = '8';
+
+    if ($wtp_tax ==""){
+       $wtp_tax=0;
     }
+    
 ?>
 <div id="wp_tax_price" class="wrap">
 <h2><?php _e( 'WP Tax Price', 'wp_tax_price' ); ?></h2>
@@ -177,7 +179,7 @@ public function options_page()
 <?php wp_nonce_field( '_wpnonce_wp_tax_price' ); ?>
 
 ビジュアルエディタに書いた価格やphpファイルに書いた価格を消費税対応で表示します。<br>こちらの設定画面で税率や表示方法を設定します。<br>※消費税率：0%とすると、そのままの値を表示します。
-<!-- aa -->
+
 <p style="margin-top: 2.5em;">
     <?php _e("Tax Rate","wp_tax_price"); ?>：<input type="number" name="wtp-tax" id="wtp-tax" class="wtp-tax"
             value="<?php echo $wtp_tax; ?>" min="0" required>％</p>
@@ -289,6 +291,7 @@ public function wp_tax_price_calc($args){
         if($wtp_tax_camma==1){
             $price = number_format($price);
         }
+
         return $price;
     }
     

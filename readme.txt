@@ -1,10 +1,10 @@
 === WP Tax Price ===
 Contributors:      tateyama
-Donate link:       http://frree-free-wheeling.com
+Donate link:       http://free-free-wheeling.com
 Tags:
 Requires at least: 3.9.1
 Tested up to:      3.9.1
-Stable tag:        0.1.0
+Stable tag:        0.1.1
 License:           GPLv2
 License URI:       http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -19,10 +19,10 @@ You can use shortcode or function.
 Tax, tax calculations and comma-separated values can be set in the WordPress Admin Panel.
 
 How to write in the PHP file:
-<?php wp_tax_price ("1000"); ?>
+- <?php wp_tax_price ("1000"); ?>
 
 How to write shortcode:
-[wp_tax_price price = "1000"]
+- [wp_tax_price price = "1000"]
 
 [This plugin maintained on GitHub.](https://github.com/aqun/wp-tax-price)
 
@@ -41,10 +41,18 @@ How to write shortcode:
 
 == Changelog ==
 
+= 0.1.1 =
+* uninstall support
+* bug fix:Admin Panel display first time
+
 = 0.1.0 =
 * First release
 
 == Upgrade Notice ==
+
+= 0.1.1 =
+* uninstall support
+* bug fix:Admin Panel display first time
 
 = 0.1.0 =
 First Release
