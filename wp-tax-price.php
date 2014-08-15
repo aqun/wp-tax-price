@@ -3,7 +3,7 @@
  * Plugin Name: WP Tax Price
  * Plugin URI:  http://free-free-wheeling.com
  * Description: This plugin is for tax support.
- * Version:     0.1.1
+ * Version:     0.1.2
  * Author:      Akinori Tateyama
  * Author URI:  http://free-free-wheeling.com
  * License:     GPLv2
@@ -286,6 +286,14 @@ public function wp_tax_price_calc($args){
     $wtp_tax = esc_attr(get_option( 'wtp-tax' ));
     $wtp_tax_camma = esc_attr(get_option( 'wtp-tax-camma' ));
     $wtp_tax_calc = esc_attr(get_option( 'wtp-tax-calc' ));
+
+    if($wtp_tax==""){
+        $wtp_tax=0;
+    }
+    if($wtp_tax_camma==""){
+        $wtp_tax_camma=1;
+    }
+
 
     if($wtp_tax==0){
         if($wtp_tax_camma==1){

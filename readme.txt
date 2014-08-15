@@ -4,7 +4,7 @@ Donate link:       http://free-free-wheeling.com
 Tags:
 Requires at least: 3.9.1
 Tested up to:      3.9.1
-Stable tag:        0.1.1
+Stable tag:        0.1.2
 License:           GPLv2
 License URI:       http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -41,6 +41,9 @@ How to write shortcode:
 
 == Changelog ==
 
+= 0.1.2 =
+* bug fix:camma display first time
+
 = 0.1.1 =
 * uninstall support
 * bug fix:Admin Panel display first time
@@ -49,6 +52,9 @@ How to write shortcode:
 * First release
 
 == Upgrade Notice ==
+
+= 0.1.2 =
+* bug fix:camma display first time
 
 = 0.1.1 =
 * uninstall support
